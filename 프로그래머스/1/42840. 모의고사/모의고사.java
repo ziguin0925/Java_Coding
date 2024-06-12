@@ -3,7 +3,7 @@ import java.util.*;
 
 class Solution {
     public static int[] solution(int[] answers) {
-        int[][] patterns = {
+       int[][] patterns = {
                 {1, 2, 3, 4, 5},
                 {2, 1, 2, 3, 2, 4, 2, 5},
                 {3, 3, 1, 1, 2, 2, 4, 4, 5, 5}
@@ -16,15 +16,19 @@ class Solution {
             }
         }
 
-        int max = Math.max(hit[0], Math.max(hit[1], hit[2]));
-        List<Integer> list = new ArrayList<>();
-        for(int i = 0; i < hit.length; i++)
-            if(max == hit[i]) list.add(i + 1);
+        List<Integer> a = new ArrayList<>();
+        int k = Math.max(hit[0], Math.max(hit[1], hit[2]));
+        for(int i=0; i<hit.length; i++){
+            if(k==hit[i]){
+                a.add(i+1);
+            }
 
-        int[] answer = new int[list.size()];
+        }
+        int[] answer = new int[a.size()];
         int cnt = 0;
-        for(int num : list)
+        for(int num : a)
             answer[cnt++] = num;
+
         return answer;
     }
 }

@@ -5,11 +5,12 @@ class Solution{
         int answer = -1;
         
         Stack<Character> st = new Stack<>();
-        if(s.length()%2!=0){
+        int length = s.length();
+        if(length%2!=0){
             return 0;
         }
         
-        for(int i =0; i<s.length(); i++){
+        for(int i =0; i<length; i++){
             if(st.isEmpty()){
                 st.add(s.charAt(i));
                 continue;

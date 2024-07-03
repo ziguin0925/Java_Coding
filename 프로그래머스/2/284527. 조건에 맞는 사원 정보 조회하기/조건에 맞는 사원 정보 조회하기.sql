@@ -1,0 +1,8 @@
+-- 코드를 작성해주세요
+select t2.SCORE, t1.EMP_NO, t1.EMP_NAME, t1.POSITION, t1.EMAIL
+    From HR_EMPLOYEES t1 , 
+    (Select EMP_NO, SUM(SCORE) SCORE FROM HR_GRADE WHERE YEAR=2022 GROUP BY EMP_NO) t2
+    WHERE t1.EMP_NO = t2.EMP_NO
+    ORDER BY 1 DESC
+    Limit 1;
+    

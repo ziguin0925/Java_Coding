@@ -1,5 +1,7 @@
 -- 코드를 입력하세요
-SELECT t1.animal_id, t1.name
-    from animal_outs t1
-    where not exists(select animal_id from animal_ins t2 where t1.animal_id=t2.animal_id)
-    order by animal_id, name
+SELECT B.ANIMAL_ID, B.NAME 
+FROM ANIMAL_INS A 
+RIGHT OUTER JOIN ANIMAL_OUTS B ON A.ANIMAL_ID = B.ANIMAL_ID 
+WHERE A.DATETIME IS NULL 
+    AND B.DATETIME IS NOT NULL 
+ORDER BY B.ANIMAL_ID;

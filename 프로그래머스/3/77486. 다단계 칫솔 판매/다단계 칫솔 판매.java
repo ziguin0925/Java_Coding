@@ -39,12 +39,10 @@ class Solution {
 
 class Box{
     String refer;
-    int amount;
     int profit;
 
     Box(String refer){
         this.refer = refer;
-        this.amount = 0;
         this.profit = 0;
     }
 

@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) throws IOException{
     
     Stack<Integer> stack = new Stack<>();
+    List<Integer> list = new ArrayList<>();
     
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int num = Integer.parseInt(br.readLine());
@@ -22,32 +23,33 @@ public class Main {
         }else if(command.equals("2")){
         // 스택이 비어있을 경우.
             if(stack.isEmpty()){
-                System.out.println("-1");
+                list.add(-1);
             }else{
                 int lastest = stack.pop();
-                System.out.println(lastest);
+                list.add(lastest);
             }
             
         // 스택에 들어있는 정수의 개수를 출력한다.
         }else if(command.equals("3")){
-            System.out.println(stack.size());
+            list.add(stack.size());
             
         //  스택이 비어있으면 1, 아니면 0을 출력한다.
         }else if(command.equals("4")){
             if(stack.isEmpty()){
-                System.out.println("1");
+                list.add(1);
             }else{
-                System.out.println("0");
+                list.add(0);
             }
             
         // 스택에 정수가 있다면 맨 위의 정수를 출력한다. 없다면 -1을 대신 출력한다.
         }else{
             if(stack.isEmpty()){
-                System.out.println("-1");
+                list.add(-1);
             }else{
-                System.out.println(stack.peek());
+                list.add(stack.peek());
             }
           }
         }
+        list.forEach(System.out::println);
     }
 }
